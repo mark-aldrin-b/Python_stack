@@ -31,3 +31,12 @@ while lowNum <= highNum:
     if lowNum % mult == 0:
         print("multiple of three", lowNum)
     lowNum += 1
+
+"""
+low = 2
+high = 9
+mult = 3
+
+for i in range(low,high + 1):
+    if i % mult == 0:
+        print(i)"""
