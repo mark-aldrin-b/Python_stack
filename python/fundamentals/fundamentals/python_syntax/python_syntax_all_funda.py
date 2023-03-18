@@ -235,3 +235,119 @@ print(context['questions'][2]['id'], context['questions'][2]['content'])
 
 print(weekend.copy())
 print(weekend.values())
+
+
+#Conditional
+
+x = 12
+if x > 50:
+    print("bigger than 50")
+else:
+    print("smaller than 50")
+# because x is not greater than 50, the second print statement is the only one that will execute
+    
+x = 55
+if x > 10:
+    print("bigger than 10")
+elif x > 50:
+    print("bigger than 50")
+else:
+    print("smaller than 10")
+# even though x is greater than 10 and 50, the first true statement is the only one that will execute, so we will only see 'bigger than 10'
+    
+if x < 10:
+    print("smaller than 10")
+# nothing happens, because the statement is false   
+
+if not (1 <= 2 and 2 >= 3):
+    print(True)
+else:
+    print(False)
+
+if not (1 <= 2 and 4 >= 3):
+    print(True)
+else:
+    print(False)
+
+
+#Loops
+
+for x in range(0, 10, 2):
+    print('1st', x)
+# output: 0, 2, 4, 6, 8
+for x in range(5, 1, -3):
+    print('2nd', x)
+# output: 5, 2
+
+for x in "Hello "'me':
+    print(x)
+# output: 'H', 'e', 'l', 'l', 'o'
+
+my_list = ["abc", 123, "xyz"]
+for i in my_list:
+    print(i)
+# output: abc, 123, xyz
+
+my_list = ["abc", 123, "xyz"]
+for x in range(0, len(my_list)):
+    print(my_list[x])
+# output: 0 abc, 1 123, 2 xyz
+
+for b in range(1, len(for_built)):
+    print("for_built length", b)
+
+for data in dog: #tuples loop
+    print(data)
+
+"""For Loops through Dictionaries
+Dictionaries are also iterable. When we iterate through a dictionary, 
+the iterator is each of the keys of the dictionary."""
+my_dict = { "name": "Noelle", "language": "Python" }
+for k in my_dict:
+    print(k)
+# output: name, language
+
+"""if want to print value"""
+my_dict = { "name": "Noelle", "language": "Python" }
+for k in my_dict:
+    print(my_dict[k])
+# output: Noelle, Python
+
+capitals2 = {"Washington":"Olympia","California":"Sacramento","Idaho":"Boise","Illinois":"Springfield","Texas":"Austin","Oklahoma":"Oklahoma City","Virginia":"Richmond"}
+# another way to iterate through the keys
+for key in capitals2.keys():
+        print(key)
+# output: Washington, California, Idaho, Illinois, Texas, Oklahoma, Virginia
+#to iterate through the values
+
+for val in capitals2.values():
+    print(val)
+# output: Olympia, Sacramento, Boise, Springfield, Austin, Oklahoma City, Richmond
+#to iterate through both keys and values
+
+for key, val in capitals2.items():
+    print(key, " = ", val)
+# output: Washington = Olympia, California = Sacramento, Idaho = Boise, etc
+
+for val in "string":
+    if val == "i":
+        break
+    print(val)
+# output: s, t, r  => Notice that when the loop got to the letter "i", we stopped looping.
+
+for val in "string":
+    if val == "i":
+        continue
+    print(val)
+# output: s, t, r, n, g
+# notice, no i in the output, but the loop continued after the i
+
+y = 3
+while y > 0:
+    print(y)
+    y = y - 1
+    if y == 0:
+        break
+else:		# only executes on a clean exit from the while loop (i.e. not a break)
+    print("Final else statement")
+# output: 3, 2, 1
