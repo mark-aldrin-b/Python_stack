@@ -196,3 +196,42 @@ dog = dog[:3] + ("man's best friend",) + dog[4:]
 #result is...
 #("Canis Familiaris", "Dog", "carnivore", "man's best friend", "domestic")
 
+
+#Dictionaries
+
+weekend = {"Sun": "Sunday", "Sat": "Saturday"} #literal notation
+capitals = {} #create an empty dictionary then add values
+capitals["svk"] = "Bratislava"
+capitals["deu"] = "Berlin"
+capitals["dnk"] = "Copenhagen"
+print(weekend)
+print(capitals)
+
+"""Accessing Values
+To access the values of a dictionary, you can use the familiar square brackets 
+along with the key to obtain its value.
+"""
+print(weekend["Sun"])
+print(capitals["svk"])
+
+"""Removing Values"""
+value_removed = capitals.pop('svk') # will remove the key 'svk' and return it's value
+del capitals['dnk'] # will delete the key, and not return anything
+
+"""Nested Dictionaries
+Nesting is also allowed in dictionaries. Dictionaries may contain lists and tuples."""
+context = {
+    'questions': [
+        { 'id': 1, 'content': 'Why is there a light in the fridge and not in the freezer?'},
+        { 'id': 2, 'content': 'Why don\'t sheep shrink when it rains?'},
+        { 'id': 3, 'content': 'Why are they called apartments when they are all stuck together?'},
+        { 'id': 4, 'content': 'Why do cars drive on the parkway and park on the driveway?'}
+    ]
+}
+print(context['questions'])
+print(context['questions'][0]['content'])
+print(context['questions'][1])
+print(context['questions'][2]['id'], context['questions'][2]['content'])
+
+print(weekend.copy())
+print(weekend.values())
