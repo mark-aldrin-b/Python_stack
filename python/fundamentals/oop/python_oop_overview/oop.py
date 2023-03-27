@@ -23,6 +23,7 @@ print(monty.name) # output: Monty """
 michael = User()
 anna = User()"""
 
+"""
 class User:
     # class attributes get defined in the class 
     bank_name = "First National Dojo"
@@ -48,3 +49,68 @@ print(monty.name, monty.account_balance)	# output: Monty Python # output: 50
 
 print(monty.account_balance)	# output: 50
 
+
+# Class/Static Method
+    #@Classmethod
+class BankAccount:
+    # class attribute
+    bank_name = "First National Dojo"
+    all_accounts = []
+    def __init__(self, int_rate,balance):
+        self.int_rate = int_rate
+        self.balance = balance
+        BankAccount.all_accounts.append(self)
+            # class method to change the name of the bank
+    @classmethod
+    def change_bank_name(cls,name):
+        cls.bank_name = name
+    # class method to get balance of all accounts
+    @classmethod
+    def all_balances(cls):
+        sum = 0
+        # we use cls to refer to the class
+        for account in cls.all_accounts:
+            sum += account.balance
+        return sum
+
+print(BankAccount.bank_name)
+
+aldrin = BankAccount(5, 500)
+bolt = BankAccount(5, 1000)
+print(BankAccount.all_accounts)
+
+print(BankAccount.all_balances())
+aldrin.change_bank_name("Bank ni Bolt")
+
+print(aldrin.bank_name)
+"""
+
+
+    #@staticmethod
+
+class BankAccount:
+    # ... __init__ goes here
+    def __init__(self, name,):
+        self.name = name
+        self.balance = 0
+    def with_draw(self,amount):
+        # we can use the static method here to evaluate
+        # if we can with draw the funds without going negative
+        if BankAccount.can_withdraw(self.balance,amount):
+            self.balance -= amount
+        else:
+            print("Insufficient Funds")
+        return self
+    # static methods have no access to any attribute
+    # only to what is passed into it
+    @staticmethod
+    def can_withdraw(balance,amount):
+        if (balance - amount) < 0:
+            return False
+        else:
+            return True
+        
+
+aldrin = BankAccount("Aldrin")
+aldrin.with_draw(500)
+print(aldrin.can_withdraw(0, 500))

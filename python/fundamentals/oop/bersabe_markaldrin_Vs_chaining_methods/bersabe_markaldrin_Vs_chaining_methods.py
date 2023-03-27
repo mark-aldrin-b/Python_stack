@@ -19,6 +19,7 @@ class User:
         #aldrin.trasnfer_money(smart.account_balance, 500)
         other_user.account_balance = other_user.account_balance + amount
         self.account_balance = self.account_balance - amount
+        
         self.display_user_balance()
         other_user.display_user_balance()
         return self
