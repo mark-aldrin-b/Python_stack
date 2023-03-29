@@ -47,7 +47,7 @@ class User:
     def make_withdrawal(self, amount, accnt):
         if accnt == 0:
             self.create_account = self.create_account["Savings"] - amount
-        if accnt == 0:
+        if accnt == 1:
             self.create_account_c = self.create_account_c["Checking"] - amount
         return self
     
