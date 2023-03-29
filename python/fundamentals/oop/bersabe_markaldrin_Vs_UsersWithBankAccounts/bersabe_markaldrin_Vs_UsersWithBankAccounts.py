@@ -31,8 +31,6 @@ checking = BankAccount(0.05, 0)
 saving = BankAccount(0.05, 0)
 
 
-
-
 class User:
     def __init__(self, name):
         self.name = name
@@ -47,7 +45,10 @@ class User:
         return self
     
     def make_withdrawal(self, amount):
-        self.account = self.account.balance - amount 
+        if self.create_account > 0:
+            self.create_account = self.create_account["Savings"] - amount
+        if self.create_account_c > 0:
+            self.create_account_c = self.create_account_c["Checking"] - amount
         return self
     
     def display_user_balance(self):
