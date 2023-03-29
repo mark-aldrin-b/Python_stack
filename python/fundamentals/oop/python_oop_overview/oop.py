@@ -48,7 +48,7 @@ print(guido.name,"=>", guido.email,"=>", guido.bank_name,"=>",guido.account_bala
 print(monty.name, monty.account_balance)	# output: Monty Python # output: 50
 
 print(monty.account_balance)	# output: 50
-
+"""
 
 # Class/Static Method
     #@Classmethod
@@ -83,9 +83,9 @@ print(BankAccount.all_balances())
 aldrin.change_bank_name("Bank ni Bolt")
 
 print(aldrin.bank_name)
+
+
 """
-
-
     #@staticmethod
 
 class BankAccount:
@@ -114,3 +114,7 @@ class BankAccount:
 aldrin = BankAccount("Aldrin")
 aldrin.with_draw(500)
 print(aldrin.can_withdraw(0, 500))
+"""
+
+
+#Association Between classes
