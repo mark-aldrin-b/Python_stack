@@ -38,7 +38,7 @@ class User:
         self.name = name
         self.account = BankAccount(int_rate=0,balance=0)
         self.create_account = {"Savings": 0} 
-        self.create_account_c = {"Checking":0}
+        self.create_account_c = {"Checking": 0}
     def make_deposit(self, amount, accnt):
         if accnt == 0:
             self.create_account = self.create_account["Savings"] + amount
@@ -69,7 +69,7 @@ class User:
 
 aldrin = User("Aldrin Bersabe")
 
-aldrin.make_deposit(1000, 0).make_deposit(1000, 1)
+aldrin.make_deposit(1000, 0).make_deposit(1000, 1).display_user_balance()
 
-aldrin.display_user_balance()
+
 
