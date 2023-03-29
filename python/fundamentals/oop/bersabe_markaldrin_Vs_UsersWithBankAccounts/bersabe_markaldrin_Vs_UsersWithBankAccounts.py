@@ -44,10 +44,10 @@ class User:
             self.create_account_c = self.create_account_c["Checking"] + amount
         return self
     
-    def make_withdrawal(self, amount):
-        if self.create_account > 0:
+    def make_withdrawal(self, amount, accnt):
+        if accnt == 0:
             self.create_account = self.create_account["Savings"] - amount
-        if self.create_account_c > 0:
+        if accnt == 0:
             self.create_account_c = self.create_account_c["Checking"] - amount
         return self
     
