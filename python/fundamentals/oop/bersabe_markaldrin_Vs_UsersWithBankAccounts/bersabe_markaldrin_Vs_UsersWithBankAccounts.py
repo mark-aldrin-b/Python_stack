@@ -35,20 +35,20 @@ class User:
     def __init__(self, name):
         self.name = name
         self.account = BankAccount(int_rate=0,balance=0)
-        self.create_account = {"Savings": 0} 
-        self.create_account_c = {"Checking": 0}
+        self.create_account = BankAccount(int_rate=0, balance=0)
+        self.create_account_c = BankAccount(int_rate=0, balance=0)
     def make_deposit(self, amount, accnt):
         if accnt == 0:
-            self.create_account = self.create_account["Savings"] + amount
+            self.create_account = self.create_account.balance + amount
         elif accnt == 1:
-            self.create_account_c = self.create_account_c["Checking"] + amount
+            self.create_account_c = self.create_account_c.balance + amount
         return self
     
     def make_withdrawal(self, amount, accnt):
         if accnt == 0:
-            self.create_account = self.create_account["Savings"] - amount
+            self.create_account = self.create_account.balance - amount
         if accnt == 1:
-            self.create_account_c = self.create_account_c["Checking"] - amount
+            self.create_account_c = self.create_account_c.balance - amount
         return self
     
     def display_user_balance(self):
