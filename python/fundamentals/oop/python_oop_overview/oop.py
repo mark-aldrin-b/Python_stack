@@ -48,7 +48,7 @@ print(guido.name,"=>", guido.email,"=>", guido.bank_name,"=>",guido.account_bala
 print(monty.name, monty.account_balance)	# output: Monty Python # output: 50
 
 print(monty.account_balance)	# output: 50
-"""
+
 
 # Class/Static Method
     #@Classmethod
@@ -83,7 +83,7 @@ print(BankAccount.all_balances())
 aldrin.change_bank_name("Bank ni Bolt")
 
 print(aldrin.bank_name)
-
+"""
 
 """
     #@staticmethod
@@ -118,3 +118,48 @@ print(aldrin.can_withdraw(0, 500))
 
 
 #Association Between classes
+
+
+#Four Pillars
+"""
+class Barista:
+    def __init__(self,name,CoffeeM):
+        self.name = name
+        self.cafe = CoffeeM("Cafe")
+    def make_coffee(self):
+        self.cafe.brew_now()
+
+user = Barista("Mark", "espresso")
+print(user.make_coffee)
+
+
+class BankAccount:
+    def __init__(self, int_rate, balance=0):
+        self.int_rate = int_rate
+        self.balance = balance
+    def withdraw(self, amount):
+        if (self.balance - amount) > 0:
+            self.balance -= amount
+        else:
+            print("INSUFFICIENT FUNDS")
+        return self
+    
+
+class RetirementAccount(BankAccount):
+    def __init__(self, int_rate, is_roth, balance=0):
+        super().__init__(int_rate, balance)	
+        self.is_roth = is_roth	
+    def withdraw(self, amount, is_early):
+        if is_early:
+            amount = amount * 1.10
+        super().withdraw(amount)
+        return self
+        """
+
+
+    
+# import the library
+import urllib.request
+response = urllib.request.urlopen("http://www.codingdojo.com")
+html = response.read()
+print(html)
